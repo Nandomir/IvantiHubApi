@@ -82,4 +82,3 @@ You can:
 Run all the tests by clicking on Run All at the top of the Test Explorer.
 Run specific tests by right-clicking on a test or a set of tests and selecting Run Selected Tests.
 Your tests will run, and you'll see the results displayed in the Test Explorer.
-## Running the Tests in Visual Studio
