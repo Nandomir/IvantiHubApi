@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Calculator</title>
+</head>
+<body>
+
+<h1>Triangle API</h1>
+
+<div>
+    <h2>Find Coordinates</h2>
+    <label for="row">Row: </label>
+    <input type="text" id="row">
+    <label for="col">Column: </label>
+    <input type="number" id="col">
+    <button onclick="getCoordinates()">Find Coordinates</button>
+    <p>Result: <span id="coordinatesResult"></span></p>
+</div>
+
+<div>
+    <h2>Find Row and Column</h2>
+    <textarea id="verticesInput" placeholder="Enter vertices as JSON..."></textarea>
+    <button onclick="findRowCol()">Find Row and Column</button>
+    <p>Result: <span id="rowColResult"></span></p>
+</div>
+
+<script>
+        async function getCoordinates() {
+            let row = document.getElementById('row').value;
+            let col = document.getElementById('col').value;
+
+            let response = await fetch(`api/triangle/findCoordinates/${row}/${col}`);
+
+            if (response.ok) {
+                let data = await response.json();
+                document.getElementById('coordinatesResult').innerText = JSON.stringify(data);
+            } else {
+                let errorText = await response.text();
+                alert(`An error occurred: ${errorText}`);
+            }
+        }
+
+        async function findRowCol() {
+            const vertices = JSON.parse(document.getElementById('verticesInput').value);
+            
+            const response = await fetch('api/triangle/findRowCol', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(vertices)
+            });
+
+            if (response.ok) {
+                const result = await response.text();
+                document.getElementById('rowColResult').innerText = result;
+            } else {
+                let errorText = await response.text();
+                alert(`An error occurred: ${errorText}`);
+            };
+        }
+    </script>
+
+</body>
+</html>
