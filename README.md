@@ -32,7 +32,7 @@ Execute the following command to run the application.
 dotnet run
 ```
 
-Your API should be running on https://localhost:<port>. 
+Your API should be running on https://localhost:<port>.   
 The port by default is 5179 for HTTP and 7291 for HTTPS.
 
 
@@ -55,7 +55,7 @@ https://localhost:<port>/swagger
 
 ## Endpoints
 
-GET /api/Triangle/findCoordinates/{row}/{col}: Takes in a row and col and returns the coordinates of the triangle.
+GET /api/Triangle/findCoordinates/{row}/{col}: Takes in a row and col and returns the coordinates of the triangle.  
 POST /api/triangle/findRowCol: Takes in the coordinates of the triangle and returns its row and col.
 
 
@@ -66,7 +66,7 @@ The IvantiHubApi.Tests project includes unit tests, aimed at verifying the funct
 
 ## Structure
 
-TriangleVerticesModelValidator.feature: Contains SpecFlow scenarios to validate TriangleVerticesModel.
+TriangleVerticesModelValidator.feature: Contains SpecFlow scenarios to validate TriangleVerticesModel.  
 TriangleService.feature: Contains SpecFlow scenarios for TriangleService methods, which include coordinate calculation and row/column identification.
 
 
@@ -74,11 +74,11 @@ TriangleService.feature: Contains SpecFlow scenarios for TriangleService methods
 
 To run the unit tests in Visual Studio, follow these steps:
 
-Open the project in Visual Studio.
-Build the solution by pressing Ctrl+Shift+B or by going to Build -> Build Solution from the menu.
-Once the build is successful, go to the Test menu and select Test Explorer.
-In the Test Explorer window, you will see a list of all available tests.
-You can:
-Run all the tests by clicking on Run All at the top of the Test Explorer.
-Run specific tests by right-clicking on a test or a set of tests and selecting Run Selected Tests.
-Your tests will run, and you'll see the results displayed in the Test Explorer.
+Open the project in Visual Studio.  
+Build the solution by pressing Ctrl+Shift+B or by going to Build -> Build Solution from the menu.  
+Once the build is successful, go to the Test menu and select Test Explorer.  
+In the Test Explorer window, you will see a list of all available tests.    
+You can:  
+Run all the tests by clicking on Run All at the top of the Test Explorer.  
+Run specific tests by right-clicking on a test or a set of tests and selecting Run Selected Tests.  
+Your tests will run, and you'll see the results displayed in the Test Explorer.  
